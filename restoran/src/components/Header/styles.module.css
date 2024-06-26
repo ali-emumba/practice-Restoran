@@ -1,8 +1,8 @@
 .header{
-    /* position: fixed; */
+    position: fixed;
     width: 100vw;
     padding: 21px 290px;
-    background-color: rgb(237, 234, 230);
+    /* background-color: rgb(237, 234, 230); */
 }
 
 .header__wrapper{

@@ -1,0 +1,48 @@
+.wrapper{
+    width: 81rem;
+    height: 37.6875rem;
+    flex-shrink: 0;
+
+    background-color: azure;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.flex__row__container{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 0.62rem;
+}
+
+.horizontal__divider{
+    width: 2.8125rem;
+    height: 0.125rem;
+    flex-shrink: 0;
+    background: #FEA116;
+}
+.heading{
+    color: #FEA116;
+    text-align: center;
+    font-family: Pacifico;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 120% */
+}
+
+.secondary__heading{
+    color: #0F172B;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 2.64rem;
+}

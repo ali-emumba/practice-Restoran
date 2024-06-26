@@ -1,0 +1,43 @@
+.wrapper{
+    width: 20.1875rem;
+    height: 4.5rem;
+    flex-shrink: 0;
+    padding: 0 0.73rem;
+    /* border: 1px solid black; */
+}
+
+.flex__row{
+    display: flex;
+    align-items: center;
+    gap: 0.62rem;
+    margin-bottom: 0.53rem;
+}
+.title{
+    color: #FEA116;
+    font-family: Pacifico;
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 120% */
+}
+.horizontal__divider{
+    width: 2.8125rem;
+    height: 0.125rem;
+    flex-shrink: 0;
+    background: #FEA116;
+}
+
+.icon{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.email{
+    color: #666565;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 150% */
+}
