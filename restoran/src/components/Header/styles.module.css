@@ -1,0 +1,29 @@
+.header__wrapper{
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 290px;
+
+    /* background-color: rgb(237, 234, 230); */
+}
+
+.header__left{
+    flex: 1;
+}
+.logo{
+    height: 50px;
+    width: 215px;
+    object-fit: contain;
+}
+.header__right{
+    flex: 1;
+    display: flex;
+    gap: 30px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 15;
+    font-weight: 500;
+    word-wrap: break-word;
+}
