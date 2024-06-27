@@ -1,5 +1,7 @@
 import ContactCard from "./ContactCard/ContactCard";
 import styles from "./styles.module.css";
+import GoogleMaps from "./GoogleMaps/GoogleMaps";
+import Form from "./Form/Form";
 
 const ContactCardsData = [
   {
@@ -67,13 +69,26 @@ const ContactForm = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.flex__row__container}>
+      <div
+        className={styles.flex__row__container}
+        style={{ justifyContent: "center" }}
+      >
         <span className={styles.horizontal__divider}></span>
         <span className={styles.heading}>Contact Us</span>
         <span className={styles.horizontal__divider}></span>
       </div>
       <span className={styles.secondary__heading}>Contact For Any Query</span>
-      <div className={styles.flex__row__container}>{renderedContactCards}</div>
+      <div className={styles.flex__row__container} style={{ gap: "3.44rem" }}>
+        {renderedContactCards}
+      </div>
+
+      <div
+        className={styles.flex__row__container}
+        style={{ justifyContent: "space-between" }}
+      >
+        <GoogleMaps />
+        <Form />
+      </div>
     </div>
   );
 };

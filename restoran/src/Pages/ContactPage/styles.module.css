@@ -47,4 +47,8 @@
     .heading__text{
         font-size: 2.40625rem;
     }
+
+    .content__wrapper{
+        padding: 6rem 0 9.875rem 0;
+    }
 }
