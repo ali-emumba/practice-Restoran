@@ -1,9 +1,9 @@
 .wrapper{
-    width: 100%;
+    width: 76%;
     min-height: 100%;
     flex-shrink: 0;
 
-    background-color: azure;
+    /* background-color: azure; */
     padding: 0 4.19rem;
     display: flex;
     flex-direction: column;
@@ -47,13 +47,14 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-    /* margin-bottom: 2.64rem; */
+    margin-bottom: 2.64rem;
 }
 
 
 
 @media only screen and (max-width: 600px) {
     .wrapper{
+        width: 100%;
         padding: 0 1.62rem;
         gap: 20px;
     }

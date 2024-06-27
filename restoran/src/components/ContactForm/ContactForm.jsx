@@ -84,7 +84,7 @@ const ContactForm = () => {
 
       <div
         className={styles.flex__row__container}
-        style={{ justifyContent: "space-between" }}
+        style={{ justifyContent: "space-between", marginTop: "1.5rem" }}
       >
         <GoogleMaps />
         <Form />

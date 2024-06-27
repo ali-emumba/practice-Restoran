@@ -47,6 +47,7 @@
   border-radius: 0.125rem;
   border: 1px solid #FEA116;
   background: #FEA116;
+  cursor: pointer;
 }
 
 .form__error_msg{
@@ -59,7 +60,7 @@
   }
 
   
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 800px) {
     .wrapper{
       width: 100%;
     }
