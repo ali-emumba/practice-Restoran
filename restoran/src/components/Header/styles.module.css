@@ -1,8 +1,9 @@
 .header{
     position: absolute;
-    width: 100vw;
+    width: 100%;
     padding: 1.6rem 17%;
     /* background-color: rgb(237, 234, 230); */
+    z-index: 100;
 }
 
 .header__wrapper{
