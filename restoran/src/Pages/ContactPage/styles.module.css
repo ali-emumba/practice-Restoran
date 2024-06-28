@@ -40,7 +40,7 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .heading__wrapper{
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.80) 0%, rgba(0, 0, 0, 0.80) 100%), url("./../../assets/backdrop_image.png") lightgray -851.563px -106.62px / 400.736% 240.658% no-repeat;
     }

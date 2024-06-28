@@ -1,7 +1,7 @@
 .header{
     position: absolute;
     width: 100vw;
-    padding: 21px 290px;
+    padding: 1.6rem 17%;
     /* background-color: rgb(237, 234, 230); */
 }
 
@@ -47,6 +47,7 @@
 .book__table__btn{
     display: inline-flex;
     padding: 0.5rem 1.5rem;
+    min-width: 8rem;
     justify-content: center;
     align-items: center;
     gap: 0.625rem;
@@ -73,7 +74,7 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .header{
         background-color: #0F172B;
         padding: 0;

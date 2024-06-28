@@ -52,7 +52,7 @@
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
     .wrapper{
         width: 100%;
         padding: 0 1.62rem;
