@@ -1,8 +1,10 @@
 .wrapper{
     width: 100%;
     min-height: 47.75rem;
-    background: url('../../assets/backdrop_image.png') lightgray -12.246px 0px / 101.382% 126.744% no-repeat;
-    position: absolute;
+    background:  url('../../assets/backdrop_image.png') lightgray -12.246px 0px / 101.382% 126.744% no-repeat;
+    background-size: cover;
+    flex-shrink: 0;
+    /* position: absolute; */
 }
 .overlay{
     height: 100%;
@@ -69,7 +71,7 @@
     width: 48%;
     /* background-color: aqua; */
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: flex;
     justify-content: right;
 }
