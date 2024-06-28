@@ -63,7 +63,12 @@ const ContactCardsData = [
 const ContactForm = () => {
   const renderedContactCards = ContactCardsData.map((data) => {
     return (
-      <ContactCard title={data.title} email={data.email} icon={data.icon} />
+      <ContactCard
+        key={data.title}
+        title={data.title}
+        email={data.email}
+        icon={data.icon}
+      />
     );
   });
 
