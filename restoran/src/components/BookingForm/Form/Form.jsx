@@ -62,8 +62,8 @@ const Form = () => {
             type="text"
             name="date&time"
             placeholder="Date & Time"
-            onfocus="(this.type='date')"
-            onblur="if(this.value==''){this.type='text'}"
+            onFocus="(this.type='date')"
+            onBlur="if(this.value==''){this.type='text'}"
             className={styles.inputs}
             aria-invalid={errors.date ? "true" : "false"}
             {...register("date", {
