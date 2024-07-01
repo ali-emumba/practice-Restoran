@@ -171,5 +171,8 @@
         flex-direction: column;
         gap: 20px;
         margin: 20px 0;
+    }
+    .stats__box{
+        width: 100%;
     }    
 }
