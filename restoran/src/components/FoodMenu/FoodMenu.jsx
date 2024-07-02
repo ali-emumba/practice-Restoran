@@ -203,6 +203,7 @@ const FoodMenu = () => {
 
   const renderedMenuBreakfastItems = MenuItems.breakfast.map((i) => (
     <MenuItemCard
+      key={i.id}
       image={i.image}
       description={i.description}
       name={i.name}
@@ -211,6 +212,7 @@ const FoodMenu = () => {
   ));
   const renderedMenuLunchItems = MenuItems.lunch.map((i) => (
     <MenuItemCard
+      key={i.id}
       image={i.image}
       description={i.description}
       name={i.name}
@@ -219,6 +221,7 @@ const FoodMenu = () => {
   ));
   const renderedMenuDinnerItems = MenuItems.dinner.map((i) => (
     <MenuItemCard
+      key={i.id}
       image={i.image}
       description={i.description}
       name={i.name}
@@ -311,7 +314,7 @@ const FoodMenu = () => {
         </div>
       </div>
       {/* <div className={styles.underline}></div> */}
-      <div className={styles.flex__row}>
+      <div className={styles.menu__items__wrapper}>
         {menuFilter.isBreakfastActive && renderedMenuBreakfastItems}
         {menuFilter.isLunchActive && renderedMenuLunchItems}
         {menuFilter.isDinnerActive && renderedMenuDinnerItems}

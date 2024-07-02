@@ -79,6 +79,11 @@ line-height: 3rem; /* 120% */
     width: 24.295rem;
     background-color: #DEE2E6;
 }
+.menu__items__wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
 
 @media only screen and (max-width: 768px) {
     .secondary__heading{
@@ -87,5 +92,8 @@ line-height: 3rem; /* 120% */
     .menu__filter{
         gap: 0.5rem;
         padding: 0 0.5rem;
+    }
+    .menu__items__wrapper{
+        grid-template-columns: 1fr;
     }
 }
