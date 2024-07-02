@@ -201,6 +201,31 @@ const FoodMenu = () => {
     isDinnerActive: false,
   });
 
+  const renderedMenuBreakfastItems = MenuItems.breakfast.map((i) => (
+    <MenuItemCard
+      image={i.image}
+      description={i.description}
+      name={i.name}
+      price={i.price}
+    />
+  ));
+  const renderedMenuLunchItems = MenuItems.lunch.map((i) => (
+    <MenuItemCard
+      image={i.image}
+      description={i.description}
+      name={i.name}
+      price={i.price}
+    />
+  ));
+  const renderedMenuDinnerItems = MenuItems.dinner.map((i) => (
+    <MenuItemCard
+      image={i.image}
+      description={i.description}
+      name={i.name}
+      price={i.price}
+    />
+  ));
+
   return (
     <div className={styles.wrapper}>
       <div
@@ -287,12 +312,9 @@ const FoodMenu = () => {
       </div>
       {/* <div className={styles.underline}></div> */}
       <div className={styles.flex__row}>
-        <MenuItemCard
-          image={MenuItems.breakfast[0].image}
-          description={MenuItems.breakfast[0].description}
-          name={MenuItems.breakfast[0].name}
-          price={MenuItems.breakfast[0].price}
-        />
+        {menuFilter.isBreakfastActive && renderedMenuBreakfastItems}
+        {menuFilter.isLunchActive && renderedMenuLunchItems}
+        {menuFilter.isDinnerActive && renderedMenuDinnerItems}
       </div>
     </div>
   );
