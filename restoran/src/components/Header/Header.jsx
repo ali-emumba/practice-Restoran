@@ -1,19 +1,23 @@
 import styles from "./styles.module.css";
 import logo from "../../assets/restoran_logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import MobileDropDown from "./MobileDropDown/MobileDropDown";
 
 const Header = () => {
-  const [onHomePage, setOnHomePage] = useState(true);
-  const [onContactPage, setOnContactPage] = useState(false);
   const [menuCollapsed, setMenuCollapsed] = useState(true);
 
+  const location = useLocation();
+
+  // Check if we are on the home page
+  const isHomePage = location.pathname === "/";
+
+  // Check if we are on the contact page
+  const isContactPage = location.pathname === "/contact";
+
   const toggleCollapsed = () => {
-    // console.log("Collapsed");
     setMenuCollapsed(!menuCollapsed);
-    // console.log("hhhhhhhh", menuCollapsed);
   };
 
   return (
@@ -21,13 +25,7 @@ const Header = () => {
       <nav className={styles.header}>
         <div className={styles.header__wrapper}>
           <div className={styles.header__left}>
-            <Link
-              to={"/"}
-              onClick={() => {
-                setOnHomePage(true);
-                setOnContactPage(false);
-              }}
-            >
+            <Link to={"/"}>
               <img
                 src={logo}
                 alt="resturan company logo"
@@ -38,21 +36,13 @@ const Header = () => {
           <div className={styles.header__right}>
             <Link
               to={"/"}
-              className={onHomePage ? styles.active__link : styles.links}
-              onClick={() => {
-                setOnHomePage(true);
-                setOnContactPage(false);
-              }}
+              className={isHomePage ? styles.active__link : styles.links}
             >
               <span>Home</span>
             </Link>
             <Link
               to={"/contact"}
-              className={onContactPage ? styles.active__link : styles.links}
-              onClick={() => {
-                setOnContactPage(true);
-                setOnHomePage(false);
-              }}
+              className={isContactPage ? styles.active__link : styles.links}
             >
               <span>Contact</span>
             </Link>
@@ -72,10 +62,8 @@ const Header = () => {
         <MobileDropDown
           menuCollapsed={menuCollapsed}
           toggleCollapsed={toggleCollapsed}
-          onHomePage={onHomePage}
-          onContactPage={onContactPage}
-          setOnHomePage={setOnHomePage}
-          setOnContactPage={setOnContactPage}
+          isHomePage={isHomePage}
+          isContactPage={isContactPage}
         />
       )}
     </>

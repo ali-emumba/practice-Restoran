@@ -52,11 +52,11 @@ const ChefsList = () => {
         }}
       >
         <span className={styles.horizontal__divider}></span>
-        <span className={styles.heading}>Contact Us</span>
+        <span className={styles.heading}>Team Members</span>
         <span className={styles.horizontal__divider}></span>
       </div>
 
-      <span className={styles.secondary__heading}>Contact For Any Query</span>
+      <span className={styles.secondary__heading}>Our Master Chefs</span>
       <div className={styles.flex__row}> {renderedChefCards}</div>
     </div>
   );

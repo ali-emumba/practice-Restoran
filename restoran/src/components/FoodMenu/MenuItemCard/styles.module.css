@@ -1,0 +1,53 @@
+.wrapper{
+    /* width: 50%; */
+    /* background-color: rgb(195, 214, 214); */
+    display: flex;
+    align-items: center;
+    gap: 1.12rem;
+}
+.left__side{
+    width: 5rem;
+    height: 5rem;
+    background-color: blueviolet;
+    flex-shrink: 0;
+}
+.image{
+    width: 100%;
+}
+
+.right__side{
+    display: flex;
+    flex-direction: column;
+}
+.right__top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.horizontal__line{
+    background-color: 1px solid #DEE2E6;
+}
+.name{
+    color: #0F172B;
+font-family: Poppins;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.5rem; /* 120% */
+}
+.description{
+    color: #666565;
+font-family: Poppins;
+font-size: 0.875rem;
+font-style: normal;
+font-weight: 400;
+line-height: 1.3125rem; /* 150% */
+}
+.price{
+    color: #FEA116;
+font-family: Poppins;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 700;
+line-height: 1.5rem; /* 120% */
+}

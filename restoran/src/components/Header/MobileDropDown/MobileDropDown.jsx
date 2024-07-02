@@ -6,12 +6,10 @@ import { Link } from "react-router-dom";
 const MobileDropDown = ({
   menuCollapsed,
   toggleCollapsed,
-  onHomePage,
-  setOnHomePage,
-  onContactPage,
-  setOnContactPage,
+  isHomePage,
+  isContactPage,
 }) => {
-  console.log(onContactPage);
+  // console.log(onContactPage);
   return (
     <>
       {/* Dropdown menu for mobile */}
@@ -21,28 +19,16 @@ const MobileDropDown = ({
         style={{ display: menuCollapsed ? "none" : "block" }}
       >
         <Menu.Item key="home">
-          <Link
-            to={"/"}
-            onClick={() => {
-              setOnHomePage(true);
-              setOnContactPage(false);
-            }}
-          >
-            <span className={onHomePage ? styles.active__link : styles.links}>
+          <Link to={"/"}>
+            <span className={isHomePage ? styles.active__link : styles.links}>
               Home
             </span>
           </Link>
         </Menu.Item>
         <Menu.Item key="contact">
-          <Link
-            to={"/contact"}
-            onClick={() => {
-              setOnContactPage(true);
-              setOnHomePage(false);
-            }}
-          >
+          <Link to={"/contact"}>
             <span
-              className={onContactPage ? styles.active__link : styles.links}
+              className={isContactPage ? styles.active__link : styles.links}
             >
               Contact
             </span>
