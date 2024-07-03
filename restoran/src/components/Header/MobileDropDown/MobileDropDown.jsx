@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import { Menu, Button } from "antd";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const MobileDropDown = ({
   menuCollapsed,
@@ -19,11 +20,11 @@ const MobileDropDown = ({
         style={{ display: menuCollapsed ? "none" : "block" }}
       >
         <Menu.Item key="home">
-          <Link to={"/"}>
+          <HashLink to={"/#menu-section"} smooth>
             <span className={isHomePage ? styles.active__link : styles.links}>
               Home
             </span>
-          </Link>
+          </HashLink>
         </Menu.Item>
         <Menu.Item key="contact">
           <Link to={"/contact"}>
@@ -35,7 +36,13 @@ const MobileDropDown = ({
           </Link>
         </Menu.Item>
         <Menu.Item key="book" className={styles.mobileBookButton}>
-          <button className={styles.book__table__btn}>Book A Table</button>
+          <HashLink
+            smooth
+            to={"/#reservation-section"}
+            className={isHomePage ? styles.active__link : styles.links}
+          >
+            <button className={styles.book__table__btn}>Book A Table</button>
+          </HashLink>
         </Menu.Item>
       </Menu>
     </>

@@ -52,11 +52,7 @@ const Header = () => {
             >
               <span>Contact</span>
             </Link>
-            <HashLink
-              smooth
-              to={"/#reservation-section"}
-              className={isHomePage ? styles.active__link : styles.links}
-            >
+            <HashLink smooth to={"/#reservation-section"}>
               <button className={styles.book__table__btn}>Book A Table</button>
             </HashLink>
           </div>
