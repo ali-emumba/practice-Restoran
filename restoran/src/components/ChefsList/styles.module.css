@@ -10,7 +10,7 @@
     /* background-color: aquamarine; */
 }
 .heading{
-    color: #FEA116;
+    color: var(--primary-color);
     text-align: center;
     font-family: Pacifico;
     font-size: 1.25rem;
@@ -22,10 +22,10 @@
     width: 2.8125rem;
     height: 0.125rem;
     flex-shrink: 0;
-    background: #FEA116;
+    background: var(--primary-color);
 }
 .secondary__heading{
-    color: #0F172B;
+    color: var(--dark-heading-text);
 text-align: center;
 font-family: Poppins;
 font-size: 2.5rem;

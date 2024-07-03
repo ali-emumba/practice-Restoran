@@ -1,17 +1,29 @@
 import { faL } from "@fortawesome/free-solid-svg-icons";
 import styles from "./styles.module.css";
 import { useForm } from "react-hook-form";
+import { Modal } from "antd";
+import { useState } from "react";
 
 const Form = () => {
+  const confirmation = () => {
+    const modal = Modal.success({
+      title: "Reservation Successful",
+      content: `name: ${getValues("name")}, date & time: ${getValues("date")}`,
+    });
+    setTimeout(() => modal.destroy(), 7000);
+  };
+
   const {
     register,
     formState: { errors },
     handleSubmit,
+    getValues,
   } = useForm();
   const onSubmit = (e, data) => {
     // e.preventdefault();
     console.log(data);
   };
+  console.log(Object.keys(errors).length === 0);
   return (
     <div className={styles.wrapper}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -59,15 +71,17 @@ const Form = () => {
         </div>
         <div>
           <input
-            type="text"
+            type="datetime-local"
             name="date&time"
             placeholder="Date & Time"
-            onFocus="(this.type='date')"
-            onBlur="if(this.value==''){this.type='text'}"
             className={styles.inputs}
             aria-invalid={errors.date ? "true" : "false"}
             {...register("date", {
-              required: "Date & Time is required",
+              required: "Date and time are required",
+              pattern: {
+                value: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/,
+                message: "Invalid date and time format",
+              },
             })}
           />
           {errors.date && (
@@ -114,7 +128,15 @@ const Form = () => {
           )}
         </div>
         <div className={styles.full__width}>
-          <button type="submit" className={styles.form__submit__btn}>
+          <button
+            type="submit"
+            className={styles.form__submit__btn}
+            onClick={() =>
+              Object.keys(errors).length === 0 && getValues("name")
+                ? confirmation()
+                : null
+            }
+          >
             BOOK NOW
           </button>
         </div>

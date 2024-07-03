@@ -45,8 +45,8 @@
   flex-shrink: 0;
 
   border-radius: 0.125rem;
-  border: 1px solid #FEA116;
-  background: #FEA116;
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
   cursor: pointer;
   color: white;
   text-transform: uppercase;

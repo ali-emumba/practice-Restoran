@@ -34,7 +34,7 @@
         align-items: center;
         justify-content: center;
         padding: 1.5rem 5%;
-        background-color: #0F172B;
+        background-color: var(--dark-heading-text);
     }
     .links{
         margin-top: 1.25rem;

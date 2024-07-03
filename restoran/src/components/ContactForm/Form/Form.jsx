@@ -1,11 +1,21 @@
+import { Modal } from "antd";
 import styles from "./styles.module.css";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
+  const confirmation = () => {
+    console.log("clicked");
+    const modal = Modal.success({
+      title: "Reservation Successful",
+      content: `name: ${getValues("name")}, message: ${getValues("message")}`,
+    });
+    setTimeout(() => modal.destroy(), 7000);
+  };
   const {
     register,
     formState: { errors },
     handleSubmit,
+    getValues,
   } = useForm();
   const onSubmit = (e, data) => {
     // e.preventdefault();
@@ -105,7 +115,15 @@ const Form = () => {
           )}
         </div>
         <div className={styles.full__width}>
-          <button type="submit" className={styles.form__submit__btn}>
+          <button
+            type="submit"
+            className={styles.form__submit__btn}
+            onClick={() =>
+              Object.keys(errors).length === 0 && getValues("name")
+                ? confirmation()
+                : null
+            }
+          >
             SEND MESSAGE
           </button>
         </div>

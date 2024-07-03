@@ -13,7 +13,7 @@
 }
 
 .quotation__mark{
-    color: #FEA116;
+    color: var(--primary-color);
 font-family: "Font Awesome 5 Free";
 font-size: 2rem;
 font-style: normal;
@@ -42,7 +42,7 @@ line-height: 1.5rem; /* 150% */
 height: 3.125rem;
 flex-shrink: 0;
 
-/* background-color: #FEA116; */
+/* background-color: var(--primary-color); */
 }
 .avatar{
     width: 100%;
@@ -61,7 +61,7 @@ line-height: 1.5rem; /* 150% */
 }
 
 .name{
-    color: #0F172B;
+    color: var(--dark-heading-text);
 font-family: Poppins;
 font-size: 1.25rem;
 font-style: normal;
@@ -70,7 +70,7 @@ line-height: 1.5rem; /* 120% */
 }
 
 .wrapper:hover{
-    background-color: #FEA116;
+    background-color: var(--primary-color);
 }
 .wrapper:hover .quotation__mark {
     color: white;

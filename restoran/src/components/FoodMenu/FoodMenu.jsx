@@ -250,7 +250,7 @@ const FoodMenu = () => {
           className={styles.menu__filter}
           style={
             menuFilter.isBreakfastActive
-              ? { borderBottom: "3px solid #FEA116" }
+              ? { borderBottom: "3px solid var(--primary-color)" }
               : null
           }
           onClick={() =>
@@ -272,7 +272,7 @@ const FoodMenu = () => {
           className={styles.menu__filter}
           style={
             menuFilter.isLunchActive
-              ? { borderBottom: "3px solid #FEA116" }
+              ? { borderBottom: "3px solid var(--primary-color)" }
               : null
           }
           onClick={() =>
@@ -295,7 +295,7 @@ const FoodMenu = () => {
           className={styles.menu__filter}
           style={
             menuFilter.isDinnerActive
-              ? { borderBottom: "3px solid #FEA116" }
+              ? { borderBottom: "3px solid var(--primary-color)" }
               : null
           }
           onClick={() =>

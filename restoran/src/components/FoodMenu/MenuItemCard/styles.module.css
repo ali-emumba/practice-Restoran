@@ -32,7 +32,7 @@
     background-color:  #DEE2E6;
 }
 .name{
-    color: #0F172B;
+    color: var(--dark-heading-text);
 font-family: Poppins;
 font-size: 1.25rem;
 font-style: normal;
@@ -48,7 +48,7 @@ font-weight: 400;
 line-height: 1.3125rem; /* 150% */
 }
 .price{
-    color: #FEA116;
+    color: var(--primary-color);
 font-family: Poppins;
 font-size: 1.25rem;
 font-style: normal;

@@ -8,3 +8,8 @@
 body{
   overflow-x: hidden;
 }
+
+:root{
+  --primary-color: rgba(254, 161, 22, 1);
+  --dark-heading-text: #0F172B
+}

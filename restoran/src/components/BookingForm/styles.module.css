@@ -1,6 +1,6 @@
 .wrapper{
     width: 100%;
-    background-color: #0F172B;
+    background-color: var(--dark-heading-text);
     min-height: 38.4375rem;
     display: flex;
 }
@@ -22,7 +22,7 @@
     justify-content: space-between;
 }
 .about__us__text{
-    color: #FEA116;
+    color: var(--primary-color);
     font-family: Pacifico;
     font-size: 1.25rem;
     font-style: normal;
@@ -34,7 +34,7 @@
     width: 2.8125rem;
     height: 0.125rem;
     flex-shrink: 0;
-    background: #FEA116;
+    background: var(--primary-color);
 }
 .heading{
     color: #FFF;

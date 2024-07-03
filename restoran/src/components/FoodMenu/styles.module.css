@@ -9,7 +9,7 @@
     gap: 1.88rem;
 }
 .heading{
-    color: #FEA116;
+    color: var(--primary-color);
     text-align: center;
     font-family: Pacifico;
     font-size: 1.25rem;
@@ -21,10 +21,10 @@
     width: 2.8125rem;
     height: 0.125rem;
     flex-shrink: 0;
-    background: #FEA116;
+    background: var(--primary-color);
 }
 .secondary__heading{
-    color: #0F172B;
+    color: var(--dark-heading-text);
 text-align: center;
 font-family: Poppins;
 font-size: 2.5rem;
@@ -51,7 +51,7 @@ line-height: 3rem; /* 120% */
     padding: 0 1rem;
 }
 .menu__avatar{
-    color: #FEA116;
+    color: var(--primary-color);
     font-family: "Font Awesome 5 Free";
     font-size: 2rem;
     font-style: normal;
@@ -67,7 +67,7 @@ line-height: 3rem; /* 120% */
     line-height: 1.3125rem; /* 150% */
 }
 .menu__heading{
-    color: #0F172B;
+    color: var(--dark-heading-text);
     font-family: Poppins;
     font-size: 1rem;
     font-style: normal;

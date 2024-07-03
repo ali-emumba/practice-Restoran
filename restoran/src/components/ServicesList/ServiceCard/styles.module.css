@@ -5,7 +5,7 @@
     background: #FFF;
     box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.08);
 
-    color: #0F172B;
+    color: var(--dark-heading-text);
     font-family: Poppins;
 
     padding: 2.5rem 1.5rem 2rem;
@@ -15,13 +15,13 @@
     transition: 0.15s ease-in-out all;
 }
 .wrapper:hover{
-    background-color: #FEA116;
+    background-color: var(--primary-color);
     color: white;
 }
 
 
 .icon{
-    color: #FEA116;
+    color: var(--primary-color);
     font-size: 3rem;
 }
 .wrapper:hover .icon{

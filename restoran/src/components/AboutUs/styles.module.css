@@ -41,7 +41,7 @@
 }
 
 .about__us__text{
-    color: #FEA116;
+    color: var(--primary-color);
     font-family: Pacifico;
     font-size: 1.25rem;
     font-style: normal;
@@ -53,10 +53,10 @@
     width: 2.8125rem;
     height: 0.125rem;
     flex-shrink: 0;
-    background: #FEA116;
+    background: var(--primary-color);
 }
 .heading{
-    color: #0F172B;
+    color: var(--dark-heading-text);
     font-family: Poppins;
     font-size: 2.5rem;
     font-style: normal;
@@ -84,7 +84,7 @@
     flex-shrink: 0;
     border-radius: 0.125rem;
     border: none;
-    background: #FEA116;
+    background: var(--primary-color);
     color: #FFF;
     cursor: pointer;
     text-align: center;
@@ -104,13 +104,13 @@
     /* background-color: aqua; */
     height: 3.60588rem;
     display: flex;
-    border-left: 5px solid #FEA116;
+    border-left: 5px solid var(--primary-color);
     gap: 20px;
     padding: 0 10px;
     align-items: center;
 }
 .stats__left{
-    color: #FEA116;
+    color: var(--primary-color);
     font-family: Poppins;
     font-size: 3rem;
     font-style: normal;
@@ -126,7 +126,7 @@
     line-height: 1.25rem; /* 150% */ 
 }
 .bold{
-    color: #0F172B;
+    color: var(--dark-heading-text);
     font-family: Poppins;
     font-size: 1rem;
     font-style: normal;
@@ -143,7 +143,8 @@
 }
 
 
-@media only screen and (max-width: 768px) {
+
+@media only screen and (max-width: 860px) {
     .wrapper{
         padding: 2rem 5%;
         flex-direction: column;

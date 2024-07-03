@@ -1,6 +1,6 @@
 .dropdownMenu {
     width: 100vw;
-    background-color: #0F172B;
+    background-color: var(--dark-heading-text);
     position: relative;
     padding: 1.06rem 1.5rem;
 }
@@ -10,7 +10,7 @@
 }
 .active__link{
     text-decoration: none;
-    color: #FEA116;
+    color: var(--primary-color);
 }
 
 .book__table__btn{
@@ -20,7 +20,7 @@
     align-items: center;
     gap: 0.625rem;
     border-radius: 0.125rem;
-    background: #FEA116;
+    background: var(--primary-color);
     border: none;
 
     color: #FFF;

@@ -46,7 +46,10 @@ const AboutUs = () => {
         </div>
         <h1 className={styles.heading}>
           Welcome to{" "}
-          <FontAwesomeIcon icon={faUtensils} style={{ color: "#FEA116" }} />{" "}
+          <FontAwesomeIcon
+            icon={faUtensils}
+            style={{ color: "var(--primary-color)" }}
+          />{" "}
           Restoran
         </h1>
         <p className={styles.description}>
