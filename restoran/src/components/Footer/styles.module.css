@@ -1,0 +1,42 @@
+.wrapper{
+    width: 100vw;
+    background-color: #272F41;
+    padding: 1.5rem 16%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #FFF;
+
+    font-family: Poppins;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.40625rem;
+
+    z-index: 100;
+}
+
+.site__name{
+    padding-bottom: 2px;
+    border-bottom: 1px solid white;
+}
+
+.links{
+    display: flex;
+    gap: 1.6rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .wrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem 5%;
+        background-color: var(--dark-heading-text);
+    }
+    .links{
+        margin-top: 1.25rem;
+    }
+}

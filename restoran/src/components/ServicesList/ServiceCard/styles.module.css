@@ -1,0 +1,53 @@
+.wrapper{
+    width: 16.4375rem;
+    height: 16rem;
+    border-radius: 0.125rem;
+    background: #FFF;
+    box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.08);
+
+    color: var(--dark-heading-text);
+    font-family: Poppins;
+
+    padding: 2.5rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.15s ease-in-out all;
+}
+.wrapper:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+.icon{
+    color: var(--primary-color);
+    font-size: 3rem;
+}
+.wrapper:hover .icon{
+    color: white;
+}
+
+.name{
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.message{
+    color: #666565;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 150% */
+}
+.wrapper:hover .message{
+    color: white;
+}
+
+@media only screen and (max-width: 768px){
+    .wrapper{
+        width: 23.5624rem;
+    }
+}

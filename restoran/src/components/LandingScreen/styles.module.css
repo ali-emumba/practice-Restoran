@@ -1,0 +1,130 @@
+.wrapper{
+    width: 100%;
+    min-height: 47.75rem;
+    background:  url('../../assets/backdrop_image.png') lightgray -12.246px 0px / 101.382% 126.744% no-repeat;
+    background-size: cover;
+    flex-shrink: 0;
+    /* position: absolute; */
+}
+.overlay{
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: rgba(15, 23, 43, 0.90);
+    padding: 8% 17%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+
+.left__side{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 4.5% 0;
+
+    gap: 1rem;
+}
+.heading{
+    font-family: Poppins;
+    font-size: 3.875rem;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.subheading{
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.book__table__btn{
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.125rem;
+    background: var(--primary-color);
+    border: none;
+    width: 12.5rem;
+    color: #FFF;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    cursor: pointer;
+} 
+
+
+.right__side{
+    width: 48%;
+    /* background-color: aqua; */
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    justify-content: right;
+}
+.rotating__image{
+    height: 100%;
+    max-height: 31.25rem;
+    /* width: 100%; */
+    -webkit-animation:spin 16s linear infinite;
+    -moz-animation:spin 16s linear infinite;
+    animation:spin 16s linear infinite;
+}
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1300px) {
+    .overlay{
+        flex-direction: column;
+        align-items: center;
+        padding: 16% 5%;
+        gap: 3rem;
+    }
+    .left__side{
+        width: 100%;
+        align-items: center;
+    }
+    .heading{
+        text-align: center;
+        font-size: 2.40625rem;
+    }
+    .subheading{
+        text-align: center;
+    }
+    .right__side{
+        width: 100%;
+        justify-content: center;
+        overflow: hidden;
+        height: 20rem;
+    }
+}

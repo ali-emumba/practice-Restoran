@@ -1,0 +1,44 @@
+.wrapper{
+    width: 26%;
+    min-width: 15rem;
+    height: 4.5rem;
+    flex-shrink: 0;
+    padding: 0 0.73rem;
+    /* border: 1px solid black; */
+}
+
+.flex__row{
+    display: flex;
+    align-items: center;
+    gap: 0.62rem;
+    margin-bottom: 0.53rem;
+}
+.title{
+    color: var(--primary-color);
+    font-family: Pacifico;
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 120% */
+}
+.horizontal__divider{
+    width: 2.8125rem;
+    height: 0.125rem;
+    flex-shrink: 0;
+    background: var(--primary-color);
+}
+
+.icon{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+.email{
+    color: #666565;
+    font-family: Poppins;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5rem; /* 150% */
+}
