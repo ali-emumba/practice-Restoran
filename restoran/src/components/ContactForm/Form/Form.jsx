@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 
 const Form = () => {
   const confirmation = () => {
-    console.log("clicked");
+    // console.log("clicked");
     const modal = Modal.success({
       title: "Reservation Successful",
       content: `name: ${getValues("name")}, message: ${getValues("message")}`,
@@ -21,6 +21,15 @@ const Form = () => {
     // e.preventdefault();
     console.log(data);
   };
+
+  const areRequiredFieldsFilled = () =>
+    !!(
+      getValues("name") &&
+      getValues("email") &&
+      getValues("subject") &&
+      getValues("message")
+    );
+
   return (
     <div className={styles.wrapper}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -119,7 +128,7 @@ const Form = () => {
             type="submit"
             className={styles.form__submit__btn}
             onClick={() =>
-              Object.keys(errors).length === 0 && getValues("name")
+              !!(Object.keys(errors).length === 0 && areRequiredFieldsFilled())
                 ? confirmation()
                 : null
             }

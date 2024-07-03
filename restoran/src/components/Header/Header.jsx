@@ -1,11 +1,16 @@
 import styles from "./styles.module.css";
 import logo from "../../assets/restoran_logo.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import MobileDropDown from "./MobileDropDown/MobileDropDown";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
+  const menuSection = document.getElementById("menu-section");
+
+  const navigateTo = useNavigate();
+
   const [menuCollapsed, setMenuCollapsed] = useState(true);
 
   const location = useLocation();
@@ -34,19 +39,26 @@ const Header = () => {
             </Link>
           </div>
           <div className={styles.header__right}>
-            <Link
-              to={"/"}
+            <HashLink
+              smooth
+              to={"/#menu-section"}
               className={isHomePage ? styles.active__link : styles.links}
             >
               <span>Home</span>
-            </Link>
+            </HashLink>
             <Link
               to={"/contact"}
               className={isContactPage ? styles.active__link : styles.links}
             >
               <span>Contact</span>
             </Link>
-            <button className={styles.book__table__btn}>Book A Table</button>
+            <HashLink
+              smooth
+              to={"/#reservation-section"}
+              className={isHomePage ? styles.active__link : styles.links}
+            >
+              <button className={styles.book__table__btn}>Book A Table</button>
+            </HashLink>
           </div>
 
           {/* Hamburger menu for mobile */}

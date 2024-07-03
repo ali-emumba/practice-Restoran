@@ -4,7 +4,7 @@ import Form from "./Form/Form";
 
 const BookingForm = () => {
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="reservation-section">
       <div className={styles.left__side}>
         <img
           src={booking_form_img}

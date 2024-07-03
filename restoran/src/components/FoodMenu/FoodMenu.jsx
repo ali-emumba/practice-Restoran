@@ -230,7 +230,7 @@ const FoodMenu = () => {
   ));
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} id="menu-section">
       <div
         style={{
           display: "flex",

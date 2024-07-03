@@ -5,7 +5,10 @@ import { Modal } from "antd";
 import { useState } from "react";
 
 const Form = () => {
+  const [dateInputType, setDateInputType] = useState("text");
+
   const confirmation = () => {
+    // console.log(errors);
     const modal = Modal.success({
       title: "Reservation Successful",
       content: `name: ${getValues("name")}, date & time: ${getValues("date")}`,
@@ -19,11 +22,16 @@ const Form = () => {
     handleSubmit,
     getValues,
   } = useForm();
+
   const onSubmit = (e, data) => {
     // e.preventdefault();
     console.log(data);
   };
-  console.log(Object.keys(errors).length === 0);
+
+  const areRequiredFieldsFilled = () =>
+    !!(getValues("name") && getValues("email") && getValues("date"));
+
+  // console.log(Object.keys(errors).length === 0, errors);
   return (
     <div className={styles.wrapper}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
@@ -71,10 +79,12 @@ const Form = () => {
         </div>
         <div>
           <input
-            type="datetime-local"
+            type={dateInputType}
             name="date&time"
             placeholder="Date & Time"
             className={styles.inputs}
+            onFocus={() => setDateInputType("datetime-local")}
+            onBlur={() => setDateInputType("text")}
             aria-invalid={errors.date ? "true" : "false"}
             {...register("date", {
               required: "Date and time are required",
@@ -132,7 +142,7 @@ const Form = () => {
             type="submit"
             className={styles.form__submit__btn}
             onClick={() =>
-              Object.keys(errors).length === 0 && getValues("name")
+              !!(Object.keys(errors).length === 0) && areRequiredFieldsFilled()
                 ? confirmation()
                 : null
             }
