@@ -14,27 +14,68 @@ const Form = () => {
     getValues,
   } = useForm();
 
+  // chatgpts function to format date and time
+  function separateDateAndTime(datetimeStr) {
+    // Parse the input datetime string
+    const dateTime = new Date(datetimeStr);
+
+    // Extract date components
+    const year = dateTime.getFullYear();
+    const month = (dateTime.getMonth() + 1).toString().padStart(2, "0"); // January is 0, so we add 1 and pad with 0 if needed
+    const day = dateTime.getDate().toString().padStart(2, "0");
+
+    // Extract time components
+    const hours = dateTime.getHours().toString().padStart(2, "0");
+    const minutes = dateTime.getMinutes().toString().padStart(2, "0");
+    const seconds = dateTime.getSeconds().toString().padStart(2, "0");
+
+    // Construct separate date and time strings
+    const datePart = `${year}-${month}-${day}`;
+    const timePart = `${hours}:${minutes}:${seconds}`;
+
+    return datePart.concat(" , ").concat(timePart);
+  }
+
   // function run on submit button click shows success popup
-  const confirmation = () => {
+  const confirmation = (data) => {
+    console.log(data);
     const modal = Modal.success({
       title: "Reservation Successful",
-      content: `name: ${getValues("name")}, date & time: ${getValues("date")}`,
+      content: (
+        <div>
+          <p>
+            <b>Name</b> : {getValues("name")}
+          </p>
+          <p>
+            <b>Number Of People</b> : {getValues("numberOfPeople")}
+          </p>
+          <p>
+            <b>Date and Time</b> : {separateDateAndTime(getValues("date"))}
+          </p>
+          <p>
+            <i>
+              <b>Special Request</b> :{" "}
+              {getValues("message") ? getValues("message") : "none"}{" "}
+            </i>
+          </p>
+        </div>
+      ),
     });
     setTimeout(() => modal.destroy(), 7000);
   };
 
-  const onSubmit = (e, data) => {
-    console.log(data);
-  };
+  // const onSubmit = (e, data) => {
+  //   console.log(data);
+  // };
 
   // checks if all the fields required are not empty, returns boolean, pretty bad code its being done manually
-  const areRequiredFieldsFilled = () =>
-    !!(getValues("name") && getValues("email") && getValues("date"));
+  // const areRequiredFieldsFilled = () =>
+  //   !!(getValues("name") && getValues("email") && getValues("date"));
 
   // all validations chcked using react-hhok-form yup not used
   return (
     <div className={styles.wrapper}>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form onSubmit={handleSubmit(confirmation)} className={styles.form}>
         <div>
           <input
             type="text"
@@ -100,6 +141,9 @@ const Form = () => {
         </div>
         <div>
           <select
+            {...register("numberOfPeople", {
+              required: "select number of people",
+            })}
             id="numberOfPeople"
             name="numberOfPeople"
             className={styles.inputs}
@@ -138,15 +182,7 @@ const Form = () => {
           )}
         </div>
         <div className={styles.full__width}>
-          <button
-            type="submit"
-            className={styles.form__submit__btn}
-            onClick={() =>
-              !!(Object.keys(errors).length === 0) && areRequiredFieldsFilled()
-                ? confirmation()
-                : null
-            }
-          >
+          <button type="submit" className={styles.form__submit__btn}>
             BOOK NOW
           </button>
         </div>
