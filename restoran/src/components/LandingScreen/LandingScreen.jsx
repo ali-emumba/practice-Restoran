@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
 import rotating_image from "../../assets/rotating_image.png";
+import { HashLink } from "react-router-hash-link";
 
 const LandingScreen = () => {
   return (
@@ -12,7 +13,9 @@ const LandingScreen = () => {
             diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
             lorem sit clita duo justo magna dolore erat amet
           </h3>
-          <button className={styles.book__table__btn}>Book A Table</button>
+          <HashLink smooth to={"/#reservation-section"}>
+            <button className={styles.book__table__btn}>Book A Table</button>
+          </HashLink>
         </div>
         <div className={styles.right__side}>
           <img

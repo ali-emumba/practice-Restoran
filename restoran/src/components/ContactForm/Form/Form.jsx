@@ -14,7 +14,19 @@ const Form = () => {
   const confirmation = () => {
     const modal = Modal.success({
       title: "Reservation Successful",
-      content: `name: ${getValues("name")}, message: ${getValues("message")}`,
+      content: (
+        <div>
+          <p>
+            <b>Name</b> : {getValues("name")}
+          </p>
+          <p>
+            <b>Subject</b> : {getValues("subject")}
+          </p>
+          <p>
+            <b>Message</b> : {getValues("message")}
+          </p>
+        </div>
+      ),
     });
     setTimeout(() => modal.destroy(), 7000);
   };
@@ -24,17 +36,17 @@ const Form = () => {
   };
 
   // return boolean whether all required fields are unempty
-  const areRequiredFieldsFilled = () =>
-    !!(
-      getValues("name") &&
-      getValues("email") &&
-      getValues("subject") &&
-      getValues("message")
-    );
+  // const areRequiredFieldsFilled = () =>
+  //   !!(
+  //     getValues("name") &&
+  //     getValues("email") &&
+  //     getValues("subject") &&
+  //     getValues("message")
+  //   );
 
   return (
     <div className={styles.wrapper}>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form onSubmit={handleSubmit(confirmation)} className={styles.form}>
         <div>
           <input
             type="text"
@@ -126,15 +138,7 @@ const Form = () => {
           )}
         </div>
         <div className={styles.full__width}>
-          <button
-            type="submit"
-            className={styles.form__submit__btn}
-            onClick={() =>
-              !!(Object.keys(errors).length === 0 && areRequiredFieldsFilled())
-                ? confirmation()
-                : null
-            }
-          >
+          <button type="submit" className={styles.form__submit__btn}>
             SEND MESSAGE
           </button>
         </div>

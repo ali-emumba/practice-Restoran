@@ -48,7 +48,7 @@
 }
 
 .book__table__btn{
-    display: flex;
+    display: inline-flex;
     padding: 1rem 3rem;
     justify-content: center;
     align-items: center;
@@ -62,7 +62,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-
     cursor: pointer;
 } 
 
