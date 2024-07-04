@@ -4,6 +4,7 @@ import client2 from "./../../assets/client2.jpg";
 import client3 from "./../../assets/client3.jpg";
 import TestimonialCard from "./TestimonialCard/TestimonialCard";
 
+// Testimonials data
 const Clients = [
   {
     id: 1,

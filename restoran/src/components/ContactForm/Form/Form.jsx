@@ -3,25 +3,27 @@ import styles from "./styles.module.css";
 import { useForm } from "react-hook-form";
 
 const Form = () => {
-  const confirmation = () => {
-    // console.log("clicked");
-    const modal = Modal.success({
-      title: "Reservation Successful",
-      content: `name: ${getValues("name")}, message: ${getValues("message")}`,
-    });
-    setTimeout(() => modal.destroy(), 7000);
-  };
   const {
     register,
     formState: { errors },
     handleSubmit,
     getValues,
   } = useForm();
+
+  // function runs on sbmt btn click shows success popop conditionally
+  const confirmation = () => {
+    const modal = Modal.success({
+      title: "Reservation Successful",
+      content: `name: ${getValues("name")}, message: ${getValues("message")}`,
+    });
+    setTimeout(() => modal.destroy(), 7000);
+  };
+
   const onSubmit = (e, data) => {
-    // e.preventdefault();
     console.log(data);
   };
 
+  // return boolean whether all required fields are unempty
   const areRequiredFieldsFilled = () =>
     !!(
       getValues("name") &&

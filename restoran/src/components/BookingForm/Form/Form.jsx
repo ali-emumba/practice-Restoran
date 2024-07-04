@@ -5,17 +5,8 @@ import { Modal } from "antd";
 import { useState } from "react";
 
 const Form = () => {
+  //toggle between setting the input field type bw text and datetime-local
   const [dateInputType, setDateInputType] = useState("text");
-
-  const confirmation = () => {
-    // console.log(errors);
-    const modal = Modal.success({
-      title: "Reservation Successful",
-      content: `name: ${getValues("name")}, date & time: ${getValues("date")}`,
-    });
-    setTimeout(() => modal.destroy(), 7000);
-  };
-
   const {
     register,
     formState: { errors },
@@ -23,15 +14,24 @@ const Form = () => {
     getValues,
   } = useForm();
 
+  // function run on submit button click shows success popup
+  const confirmation = () => {
+    const modal = Modal.success({
+      title: "Reservation Successful",
+      content: `name: ${getValues("name")}, date & time: ${getValues("date")}`,
+    });
+    setTimeout(() => modal.destroy(), 7000);
+  };
+
   const onSubmit = (e, data) => {
-    // e.preventdefault();
     console.log(data);
   };
 
+  // checks if all the fields required are not empty, returns boolean, pretty bad code its being done manually
   const areRequiredFieldsFilled = () =>
     !!(getValues("name") && getValues("email") && getValues("date"));
 
-  // console.log(Object.keys(errors).length === 0, errors);
+  // all validations chcked using react-hhok-form yup not used
   return (
     <div className={styles.wrapper}>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>

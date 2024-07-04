@@ -10,6 +10,7 @@ import menuitem1 from "./../../assets/menuitem1.jpg";
 import menuitem2 from "./../../assets/menuitem2.jpg";
 import MenuItemCard from "./MenuItemCard/MenuItemCard";
 
+// Food menu items, broken down into an obj of three array: breaky, lunch, dinner
 const MenuItems = {
   breakfast: [
     {
@@ -195,12 +196,14 @@ const MenuItems = {
 };
 
 const FoodMenu = () => {
+  // use to switch which menu to show, the one which is true will be displayed
   const [menuFilter, setMenuFilter] = useState({
     isBreakfastActive: true,
     isLunchActive: false,
     isDinnerActive: false,
   });
 
+  // mapping over the menu, create all renderings of all 3 menus and then switch displayed on menuFilter change
   const renderedMenuBreakfastItems = MenuItems.breakfast.map((i) => (
     <MenuItemCard
       key={i.id}

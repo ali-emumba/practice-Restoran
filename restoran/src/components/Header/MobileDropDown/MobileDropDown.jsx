@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./styles.module.css";
 import { Menu, Button } from "antd";
 import { Link } from "react-router-dom";
@@ -10,7 +9,6 @@ const MobileDropDown = ({
   isHomePage,
   isContactPage,
 }) => {
-  // console.log(onContactPage);
   return (
     <>
       {/* Dropdown menu for mobile */}

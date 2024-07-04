@@ -1,26 +1,24 @@
 import styles from "./styles.module.css";
 import logo from "../../assets/restoran_logo.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import MobileDropDown from "./MobileDropDown/MobileDropDown";
 import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
-  const menuSection = document.getElementById("menu-section");
-
-  const navigateTo = useNavigate();
-
+  // mobile menu
   const [menuCollapsed, setMenuCollapsed] = useState(true);
 
   const location = useLocation();
 
+  // used to active home page or contact page link
   // Check if we are on the home page
   const isHomePage = location.pathname === "/";
-
   // Check if we are on the contact page
   const isContactPage = location.pathname === "/contact";
 
+  // toggle mobile menu
   const toggleCollapsed = () => {
     setMenuCollapsed(!menuCollapsed);
   };
@@ -76,46 +74,6 @@ const Header = () => {
       )}
     </>
   );
-
-  //   const [collapsed, setCollapsed] = useState(true);
-
-  //   const toggleCollapsed = () => {
-  //     setCollapsed(!collapsed);
-  //   };
-
-  //   return (
-  //     <div className={styles.navbar}>
-  //       <div className={styles.logo}>
-  //         {/* Replace with your logo */}
-  //         <img src="/path/to/logo.png" alt="Logo" />
-  //       </div>
-  //       <div className={styles.menu}>
-  //         <Menu mode="horizontal">
-  //           <Menu.Item key="home">Home</Menu.Item>
-  //           <Menu.Item key="contact">Contact</Menu.Item>
-  //         </Menu>
-  //       </div>
-  //       <div className={styles.bookButton}>
-  //         <Button type="primary">Book a Table</Button>
-  //       </div>
-  //       {/* Hamburger menu for mobile */}
-  //       <div className={styles.hamburger} onClick={toggleCollapsed}>
-  //         <MenuOutlined />
-  //       </div>
-  //       {/* Dropdown menu for mobile */}
-  //       <Menu
-  //         className={styles.dropdownMenu}
-  //         onClick={toggleCollapsed}
-  //         style={{ display: collapsed ? "none" : "block" }}
-  //       >
-  //         <Menu.Item key="home">Home</Menu.Item>
-  //         <Menu.Item key="contact">Contact</Menu.Item>
-  //         <Menu.Item key="book" className={styles.mobileBookButton}>
-  //           <Button type="primary">Book a Table</Button>
-  //         </Menu.Item>
-  //       </Menu>
-  //     </div>
-  //   );
 };
 
 export default Header;

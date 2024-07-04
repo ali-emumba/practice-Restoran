@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import GoogleMaps from "./GoogleMaps/GoogleMaps";
 import Form from "./Form/Form";
 
+// Data for the contact cards
 const ContactCardsData = [
   {
     title: "Booking",
@@ -61,6 +62,7 @@ const ContactCardsData = [
 ];
 
 const ContactForm = () => {
+  // mapping through the entire contact card data to create cards using a card component
   const renderedContactCards = ContactCardsData.map((data) => {
     return (
       <ContactCard

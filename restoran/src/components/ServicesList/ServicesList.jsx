@@ -7,6 +7,7 @@ import {
   faHeadset,
 } from "@fortawesome/free-solid-svg-icons";
 
+// Data for service cards
 const servicesData = [
   {
     id: 1,
@@ -39,6 +40,7 @@ const servicesData = [
 ];
 
 const ServicesList = () => {
+  // mapping over serv data to create service card component
   const renderedServiceCards = servicesData.map((s) => (
     <ServiceCard name={s.name} icon={s.icon} message={s.message} key={s.id} />
   ));
